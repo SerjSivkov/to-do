@@ -1,0 +1,15 @@
+<div class="col-md-12">
+	<h1>Мои задачи</h1>
+	<div class="buffer-top">
+		<%= link_to "Новая задача", new_task_path, class: 'btn btn-primary' %>
+	</div>
+	<div class="buffer-top">
+		<% @tasks.each do |task| %>
+		  <%= render partial: 'task', object: task %>
+		<% end %>
+		<hr />
+		<% @completed_tasks.each do |task| %>
+		  <%= render partial: 'task', object: task %>
+		<% end %>
+	</div>
+</div>
